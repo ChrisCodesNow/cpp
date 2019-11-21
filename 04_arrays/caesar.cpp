@@ -6,6 +6,9 @@ void display_message();
 int get_key();
 int get_menu_choice();
 void perform_menu_choice(int);
+void encrypt_message();
+void decrypt_message();
+void change_key();
 
 int main(){
     int key;
@@ -57,13 +60,13 @@ void perform_menu_choice(int choice){
 
     switch(choice){
     case 1:
-        cout << "Encryption Tool" << endl;;
+        encrypt_message();
         break;
     case 2:
-        cout << "Decryption Tool" << endl;
+        decrypt_message();
         break;
     case 3:
-        cout << "Change Key Tool" << endl;
+        change_key();
         break;
     case 4:
         break;
@@ -71,4 +74,16 @@ void perform_menu_choice(int choice){
         break;
     }
     cout << endl;
+}
+
+void encrypt_message(){
+    cout << "Encryption Tool" << endl;;
+}
+
+void decrypt_message(){
+    cout << "Decryption Tool" << endl;
+}
+
+void change_key(){
+    cout << "Change Key Tool" << endl;
 }
