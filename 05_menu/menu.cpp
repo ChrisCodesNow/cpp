@@ -30,6 +30,9 @@ void select_choice(int choice){
     case 1:
         cout << "Welcome to book management" << endl << endl;
         display_book_menu();
+        int book_choice;
+        cin >> book_choice;
+        
         break;
     case 2:
         cout << "Welcome to member management" << endl;
