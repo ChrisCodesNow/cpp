@@ -5,7 +5,7 @@ using namespace std;
 void display_message();
 int get_key();
 int get_menu_choice();
-
+void perform_menu_choice(int);
 
 int main(){
     int key;
@@ -14,6 +14,7 @@ int main(){
         display_message();
         key = get_key();
         choice = get_menu_choice();
+        perform_menu_choice(choice);
     }while(choice != 4);
 
     return 0;
@@ -50,4 +51,24 @@ int get_menu_choice(){
     cout << endl;
 
     return choice;
+}
+
+void perform_menu_choice(int choice){
+
+    switch(choice){
+    case 1:
+        cout << "Encryption Tool" << endl;;
+        break;
+    case 2:
+        cout << "Decryption Tool" << endl;
+        break;
+    case 3:
+        cout << "Change Key Tool" << endl;
+        break;
+    case 4:
+        break;
+    default:
+        break;
+    }
+    cout << endl;
 }
