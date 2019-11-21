@@ -4,6 +4,7 @@ using namespace std;
 // Function prototype
 void display_message();
 int get_key();
+int get_menu_choice();
 
 
 int main(){
@@ -12,6 +13,7 @@ int main(){
     do{
         display_message();
         key = get_key();
+        choice = get_menu_choice();
     }while(choice != 4);
 
     return 0;
@@ -37,4 +39,13 @@ int get_key(){
         cout << "Please select a different key before attempting to encrypt or decrypt\n";
     }
     return key;
+}
+
+int get_menu_choice(){
+    int choice;
+
+    cout << ">> ";
+    cin >> choice;
+    
+    return choice;
 }
