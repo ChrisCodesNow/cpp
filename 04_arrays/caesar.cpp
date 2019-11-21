@@ -38,6 +38,7 @@ int get_key(){
         cout << "Using a key of 0 has no effect.\n";
         cout << "Please select a different key before attempting to encrypt or decrypt\n";
     }
+    
     return key;
 }
 
@@ -46,6 +47,7 @@ int get_menu_choice(){
 
     cout << ">> ";
     cin >> choice;
-    
+    cout << endl;
+
     return choice;
 }
