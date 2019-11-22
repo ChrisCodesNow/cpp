@@ -1,12 +1,13 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 // Function prototype
 void display_message();
 int get_key();
 int get_menu_choice();
-void perform_menu_choice(int);
-void encrypt_message();
+void perform_menu_choice(int, int);
+void encrypt_message(int);
 void decrypt_message();
 void change_key();
 
@@ -17,7 +18,7 @@ int main(){
         display_message();
         key = get_key();
         choice = get_menu_choice();
-        perform_menu_choice(choice);
+        perform_menu_choice(choice, key);
     }while(choice != 4);
 
     return 0;
@@ -56,11 +57,11 @@ int get_menu_choice(){
     return choice;
 }
 
-void perform_menu_choice(int choice){
+void perform_menu_choice(int choice, int key){
 
     switch(choice){
     case 1:
-        encrypt_message();
+        encrypt_message(key);
         break;
     case 2:
         decrypt_message();
@@ -76,9 +77,6 @@ void perform_menu_choice(int choice){
     cout << endl;
 }
 
-void encrypt_message(){
-    cout << "Encryption Tool" << endl;;
-}
 
 void decrypt_message(){
     cout << "Decryption Tool" << endl;
