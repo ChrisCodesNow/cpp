@@ -10,6 +10,7 @@ void perform_menu_choice(int, int);
 void encrypt_message(int);
 void decrypt_message();
 void change_key();
+char shift(char, int);
 
 int main(){
     int key;
@@ -75,6 +76,15 @@ void perform_menu_choice(int choice, int key){
         break;
     }
     cout << endl;
+}
+
+void encrypt_message(int key){
+    cout << "Encryption Tool" << endl;
+    string message;
+    cout << "Enter a message to encrypt: ";
+    cin >> message;
+
+
 }
 
 
