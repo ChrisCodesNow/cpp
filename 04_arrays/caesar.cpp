@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>   // toupper
 using namespace std;
 
 // Function prototype
@@ -10,6 +11,7 @@ void perform_menu_choice(int, int);
 void encrypt_message(int);
 void decrypt_message();
 void change_key();
+void encrypt_string(string&, int);
 char shift(char, int);
 
 int main(){
@@ -83,10 +85,9 @@ void encrypt_message(int key){
     string message;
     cout << "Enter a message to encrypt: ";
     cin >> message;
-
-
+    encrypt_string(message, key);
+    cout << "Encrypted message: " << message << endl;
 }
-
 
 void decrypt_message(){
     cout << "Decryption Tool" << endl;
@@ -94,4 +95,19 @@ void decrypt_message(){
 
 void change_key(){
     cout << "Change Key Tool" << endl;
+}
+
+void encrypt_string(string &message, int key){
+    for (int i = 0; i < message.length(); i ++){
+         message[i] = shift(message[i], key);
+    }
+
+}
+char shift(char letter, int key){
+    const int size = 26;
+    char alphabet[size] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+
+    int index = int(toupper(letter)) - int('A');
+    index = (index + key) % size;
+    return alphabet[index];
 }
